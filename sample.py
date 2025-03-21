@@ -1,11 +1,16 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 import google.generativeai as genai
 import os
 
 # Configure Gemini API
 genai.configure(api_key=os.getenv('GEMINI_API_KEY'))
 
+# Create Flask app
 app = Flask(__name__)
+
+# Enable CORS for all routes
+CORS(app)
 
 @app.route("/", methods=["GET"])
 def home():
