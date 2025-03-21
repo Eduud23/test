@@ -1,16 +1,21 @@
 from flask import Flask, request, jsonify
+import google.generativeai as genai
+
+# Configure Gemini API
+genai.configure(api_key="AIzaSyAhuJav8nUwjIH0MWLhK_uZgFhjLbMuTr0")
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    query = request.args.get("q", "")
-    if query.lower() == "hello":
-        return jsonify({"response": "Hi there!"})
-    elif query.lower() == "how are you":
-        return jsonify({"response": "I'm just a Flask app, but I'm good!"})
-    else:
-        return jsonify({"response": "I don't understand."})
+    query = request.args.get("q", "").lower()
+    
+    if query:
+        model = genai.GenerativeModel("gemini-1.5-pro")
+        response = model.generate_content(query)
+        return jsonify({"response": response.text})
+    
+    return jsonify({"response": "#UnknownService"})
 
 if __name__ == "__main__":
     app.run(debug=True)
