@@ -41,6 +41,11 @@ def ask_gemini(prompt):
     - Tire repair shop
     - Electronics store
     - Mechanic
+    - Parking lot
+    - Public parking space
+    - Free parking lot
+    - Parking garage
+    - Parking lot for motorcycles
     If unrelated, respond with 'Error: No relevant services found.'
     User Query: "{prompt}"
     Provide only the service category or categories, separated by commas.
