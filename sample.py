@@ -38,7 +38,7 @@ def ask_gemini(prompt):
     - Towing Service
     - Battery store
     - Electronics store
-    - Tire repair shop
+    - Tire repair shop, Auto repair shop
     - Electronics store
     - Mechanic
     - Parking lot
