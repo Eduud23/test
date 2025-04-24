@@ -24,8 +24,8 @@ def home():
 def ask_gemini(prompt):
     formatted_prompt = f"""
     The user describes a vehicle-related issue. Categorize it into one or more of these services, separated by commas if multiple:
-    - Auto repair shop, shop
-    - Auto Parts Store
+    - Auto repair shop
+    - Auto Parts Store, shop
     - Motorcycle parts store
     - Auto body parts supplier
     - Gas station
