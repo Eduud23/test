@@ -51,7 +51,7 @@ def ask_gemini(prompt):
     """
     
     try:
-        response = genai.GenerativeModel("gemini-1.5-pro").generate_content(formatted_prompt)
+        response = genai.GenerativeModel("gemini-2.0-flash").generate_content(formatted_prompt)
         return response.text.strip() if response.text else "Error: No relevant services found."
     except Exception as e:
         return f"Error: {str(e)}"
